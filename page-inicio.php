@@ -156,7 +156,7 @@ get_header(); ?>
 
                                         <h3 class="u-font-size-14 u-font-weight-semibold text-center all:u-color-folk-white mb-0">
                                             e muito <br>
-                                            <span class="u-font-weight-black text-uppercase">maaais!</span>
+                                            <span class="u-font-weight-black text-uppercase">maaaais!</span>
                                         </h3>
                                     </div>
                                 </a>
