@@ -1,0 +1,82 @@
+$utility-name: 'u-color-folk';
+
+.#{$utility-name} {
+    &-black {
+        color: $color-folk-black !important;
+    }
+    
+    &-blue {
+        color: $color-folk-blue !important;
+    }
+    
+    &-cyan {
+        color: $color-folk-cyan !important;
+    }
+
+    &-green {
+        color: $color-folk-green !important;
+    }
+    
+    &-primary {
+        color: $color-folk-primary !important;
+    }
+
+    &-purple {
+        color: $color-folk-purple !important;
+    }
+
+    &-red {
+        color: $color-folk-red !important;
+    }
+
+    &-secondary {
+        color: $color-folk-secondary !important;
+    }
+
+    &-theme {
+        color: $color-folk-theme !important;
+    }
+
+    &-white {
+        color: $color-folk-white !important;
+    }
+}
+
+.after\:\: {
+    &#{$utility-name} {
+        &-white {
+            &::after {
+                color: $color-folk-white !important;
+            }
+        }
+    }
+}
+
+.all\: {
+    &#{$utility-name} {
+        &-cyan *, 
+        &-cyan {
+            color: $color-folk-cyan !important;
+        }
+
+        &-primary,
+        &-primary * {
+            color: $color-folk-primary !important;
+        }
+
+        &-white *,
+        &-white {
+            color: $color-folk-white !important;
+        }
+    }
+}
+
+.hover\: {
+    &#{$utility-name} {
+        &-white {
+            &:hover {
+                color: $color-folk-white !important;
+            }
+        }
+    }
+}

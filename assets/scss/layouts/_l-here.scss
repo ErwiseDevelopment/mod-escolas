@@ -1,0 +1,21 @@
+$layout-name: 'l-here';
+
+.#{$layout-name} {
+    &__card-img {
+        height: 196px;
+    }
+    
+    &__card-title {
+        font-size: 1.125rem;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__card-text {
+        @media screen and (min-width: 1600px) {
+            font-size: 1.125rem;
+        }
+    }
+}
