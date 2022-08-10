@@ -221,7 +221,7 @@ function remove_links_menu() {
     //remove_menu_page('themes.php'); // Aparencia
     remove_menu_page('plugins.php'); // Plugins
     remove_menu_page('tools.php'); // Ferramentas
-    remove_menu_page('options-general.php'); // Configuracoes
+    //remove_menu_page('options-general.php'); Configuracoes
 }
 add_action( 'admin_menu', 'remove_links_menu' );
 
