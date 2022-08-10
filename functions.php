@@ -184,7 +184,15 @@ function mantenedora_create_post_type() {
 		'public' 		=> true,
 		'has_archive'	=> true,
 		'menu_icon'		=> 'dashicons-format-gallery',
-		'supports' 		=> array( 'title',  'revisions', 'author' ) 
+		'supports' 		=> array( 'title',  'revisions', 'author' )        
+	) );
+    register_post_type( 'equipe', array(
+		'labels' 		=> array( 'name' => 'Equipe', 'singular_name' => 'Equipe', 'all_items' => 'Equipe completa' ),
+		'public' 		=> true,
+		'has_archive'	=> true,
+		'menu_icon'		=> 'dashicons-welcome-write-blog',
+		'supports' 		=> array( 'title', 'thumbnail' ),
+        
 	) );
 }
 add_action( 'init', 'mantenedora_create_post_type' );
@@ -192,7 +200,9 @@ add_action( 'init', 'mantenedora_create_post_type' );
 function mantenedora_create_taxonomy() {
 	register_taxonomy( 'galeriacategoria', 'galeria', array( 'labels' => array( 'name' => 'Categorias', 'singular_name' => 'Categoria' ), 'hierarchical' => true, 'show_admin_column' => true ) );
     register_taxonomy( 'agendacidade', 'agendas', array( 'labels' => array( 'name' => 'Cidades', 'singular_name' => 'Cidade' ), 'hierarchical' => true, 'show_admin_column' => true ) );
-    }
+    register_taxonomy( 'equipecat', 'equipe', array( 'labels' => array( 'name' => 'Funções', 'singular_name' => 'Função' ), 'hierarchical' => true, 'show_admin_column' => true ) );
+  
+}
 add_action( 'init', 'mantenedora_create_taxonomy' );
 
 function single_temas_scripts()
@@ -279,6 +289,7 @@ function logoadmin() {
         $wp_admin_bar->remove_menu('comments');
     }
     add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
+    
 function limit_words($string, $word_limit) {  
     $words = explode(' ', $string, ($word_limit + 1));  
     if(count($words) > $word_limit) { array_pop($words); array_push($words, "..."); }  
