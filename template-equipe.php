@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Evolutap
+ * @package Single Temas
  *
  * Template Name: Modelo Equipe
  * Template Post Type: page
@@ -58,14 +58,87 @@ get_header();
                     <?php the_content() ?>
                 </h5>
 
-                <div class="row">
+                <?php 
+                    $posts_priority = array();
+
+                    $categories_priority = [
+                        'Diretoria',
+                        'Coordenador'
+                    ];
+
+                    $args = array(
+                        'posts_per_page' => -1,
+                        'post_type'      => 'equipe',
+                        'order'          => 'DESC',
+                    );
+
+                    $teams = new WP_Query( $args );
+
+                    foreach( $categories_priority as $category_priority ) :
+                ?>
+                        <div class="row justify-content-center">
+
+                            <!-- loop -->
+                            <?php
+                                if( $teams->have_posts() ) :
+                                    while( $teams->have_posts() ) : $teams->the_post();
+
+                                        $terms = get_the_terms( get_the_ID(), 'equipecat' );
+
+                                        foreach( $terms as $term ) :
+                                            if( preg_match("/{$category_priority}/i", $term->name)) :
+                                                array_push( $posts_priority, get_the_ID() );
+                            ?>
+                                                <div class="col-lg-4 my-3">
+
+                                                    <div class="card border-0">
+
+                                                        <div class="card-img">
+
+                                                            <?php
+                                                                $alt_title = get_the_title();
+
+                                                                the_post_thumbnail('post-thumbnail',
+                                                                    array(
+                                                                        'class' => 'img-fluid',
+                                                                        'alt'   => $alt_title
+                                                                ));
+                                                            ?>
+                                                        </div>
+
+                                                        <div class="card-body pl-0">
+
+                                                            <h4 class="u-font-weight-bold u-color-folk-theme">
+                                                                <!-- Padre Paulo Manoel de Souza Profilo -->
+                                                                <?php the_title() ?>
+                                                            </h4>
+
+                                                            <p class="u-font-size-14 u-font-weight-semibold">
+                                                                <!-- Diretor Local -->
+                                                                <?php echo $term->name; ?>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                            <?php                                    
+                                            endif;
+                                        endforeach;
+                                    endwhile;
+                                endif;
+                            ?>
+                            <!-- end loop -->
+                        </div>
+                <?php endforeach; ?>
+
+                <div class="row justify-content-center">
 
                     <!-- loop -->
                     <?php
                         $args = array(
                             'posts_per_page' => -1,
                             'post_type'      => 'equipe',
-                            'order'          => 'ASC'
+                            'order'          => 'DESC',
+                            'post__not_in'   => $posts_priority
                         );
 
                         $teams = new WP_Query( $args );
@@ -78,10 +151,6 @@ get_header();
                                     <div class="card border-0">
 
                                         <div class="card-img">
-                                            <!-- <img
-                                            class="img-fluid"
-                                            src="http://novolar.test/wp-content/uploads/2022/04/padre-paulo-manoel.jpeg"
-                                            alt="Padre Paulo Manoel de Souza Profilo"> -->
 
                                             <?php
                                                 $alt_title = get_the_title();
@@ -105,17 +174,14 @@ get_header();
                                                 <!-- Diretor Local -->
 
                                                 <?php
-                                                    $team_function = get_the_terms(get_the_ID(), 'equipecat');
-                                                    
-                                                    echo $team_function[0]->name;
+                                                    $terms = get_the_terms( get_the_ID(), 'equipecat' );
+                                                    echo $terms[0]->name;
                                                 ?>
                                             </p>
-
-                                            
                                         </div>
                                     </div>
-                                </div>
-                    <?php
+                                </div> 
+                    <?php                                  
                             endwhile;
                         endif;
                     ?>

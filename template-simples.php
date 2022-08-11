@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Evolutap
+ * @package Single Temas
  *
  * Template Name: Template Simples
  * Template Post Type: page
