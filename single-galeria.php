@@ -45,11 +45,12 @@ get_header(); ?>
                         if( have_rows( 'galeria' ) ) :
                             while( have_rows( 'galeria' ) ) : the_row();
                     ?>
-                                <div class="col-3 my-3">
+                                <div class="col-3 my-3 js-photos" data-value="<?php echo $count; ?>">
                                     <img
-                                    class="img-fluid"
+                                    class="img-fluid w-100"
+                                    style="height:190px!important;object-fit:cover"
                                     src="<?php echo get_sub_field( 'foto' ) ?>"
-                                    alt="">
+                                    alt="<?php the_title() ?>">
                                 </div>
                     <?php   endwhile;
                         endif;
@@ -59,6 +60,52 @@ get_header(); ?>
         </div>
     </div>
 </section>
+
+<!-- modal photos -->
+<div class="l-modal-photos d-flex justify-content-center align-items-center js-modal-photos">
+    
+    <div class="l-modal-photos__overlay js-modal-photos-overlay"></div>
+    <span class="l-modal-photos__close js-modal-photos-close">x</span>
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-10 col-lg-8">
+
+                <!-- swiper -->
+                <div class="swiper-container js-swiper-modal-photos">
+
+                    <div class="swiper-wrapper">
+                        
+                        <!-- slide -->
+                        <?php 
+                            if( have_rows( 'galeria' ) ) :
+                                while( have_rows( 'galeria' ) ) : the_row();
+                        ?>
+                                    <div class="swiper-slide">
+                                        <img
+                                        class="l-modal-photos__image img-fluid w-100"
+                                        src="<?php echo get_sub_field( 'foto' ) ?>"
+                                        alt="<?php the_title() ?>">
+                                    </div>
+                        <?php   endwhile;
+                            endif;
+                        ?>
+                        <!-- end slide -->
+                    </div>
+                </div>
+
+                <!-- arrows -->
+                <div class="swiper-button-prev swiper-button-prev-modal-photos u-color-folk-white js-swiper-button-prev-modal-photos"></div>
+                <div class="swiper-button-next swiper-button-next-modal-photos js-swiper-button-next-modal-photos"></div>
+                <!-- end swiper -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end modal photos -->
+
 <?php endwhile; ?>
 
 </div><!-- #main -->
