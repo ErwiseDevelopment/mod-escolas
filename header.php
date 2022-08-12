@@ -78,7 +78,7 @@
                                                 <?php if(get_field( 'instagram', 'option' )) : ?>
                                                     <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
                                                         <a
-                                                        class="u-icon__brands u-icon__instagram u-font-size-0 before::u-font-size-20 text-decoration-none u-color-folk-white"
+                                                        class="u-icon__brands u-icon__instagram u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
                                                         href="<?php echo get_field( 'instagram', 'option' ); ?>"
                                                         target="_blank"
                                                         rel="noreferrer noopener">
@@ -90,7 +90,7 @@
                                                 <?php if(get_field( 'facebook', 'option' )) : ?>
                                                     <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
                                                         <a
-                                                        class="u-icon__brands u-icon__facebook u-font-size-0 before::u-font-size-20 text-decoration-none u-color-folk-white"
+                                                        class="u-icon__brands u-icon__facebook u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
                                                         href="<?php echo get_field( 'facebook', 'option' ) ?>"
                                                         target="_blank"
                                                         rel="noreferrer noopener">
@@ -102,7 +102,7 @@
                                                 <?php if(get_field( 'youtube', 'option' )) : ?>
                                                     <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
                                                         <a
-                                                        class="u-icon__brands u-icon__youtube u-font-size-0 before::u-font-size-20 text-decoration-none u-color-folk-white"
+                                                        class="u-icon__brands u-icon__youtube u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
                                                         href="<?php echo get_field( 'youtube', 'option' ) ?>"
                                                         target="_blank"
                                                         rel="noreferrer noopener">
@@ -114,7 +114,7 @@
                                                 <?php if(get_field( 'whatsapp', 'option' )) : ?>
                                                     <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
                                                         <a
-                                                        class="u-icon__brands u-icon__whatsapp u-font-size-0 before::u-font-size-20 text-decoration-none u-color-folk-white"
+                                                        class="u-icon__brands u-icon__whatsapp u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
                                                         href="<?php echo get_field( 'whatsapp', 'option' ) ?>"
                                                         target="_blank"
                                                         rel="noreferrer noopener">
@@ -193,7 +193,100 @@
                             <!-- end menu editorials -->
                         </div>
 
-                        <div class="col-lg-3 mt-3">
+                        <div class="col-5 d-none d-lg-block">
+                            
+                            <div class="row">
+
+                                <div class="col-3">
+                                    <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
+                                        <a href="<?php echo esc_url( home_url( '/' )); ?>">
+                                            <img
+                                            class="img-fluid"
+                                            src="<?php echo esc_url(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>"
+                                            alt="<?php echo esc_url(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>">
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+
+                                <div class="col-4 px-0">
+                                    <?php
+                                        if( have_rows( 'botoes_de_acesso', 'option' ) ) :
+                                            while( have_rows( 'botoes_de_acesso', 'option' ) ) : the_row();
+                                                if( get_sub_field( 'visivel' ) == 'Sim' ) :
+                                    ?>
+                                                    <a
+                                                    class="d-block hover:u-opacity-8 u-font-size-10 u-font-weight-bold text-center text-decoration-none my-1 py-2 px-4"
+                                                    style="color:<?php echo get_sub_field( 'cor' ) ?>;background-color:<?php echo get_sub_field( 'cor_de_fundo' ) ?>"
+                                                    href="#"
+                                                    <?php if( get_sub_field( 'abrir_em_uma_nova_aba' ) == 'Sim' ) : ?>
+                                                        target="_blank"
+                                                    <?php endif; ?>>
+                                                        <?php echo get_sub_field( 'texto' ) ?>
+                                                    </a>
+                                    <?php
+                                                endif;
+                                            endwhile;
+                                        endif;
+                                    ?>
+                                </div>
+
+                                <div class="col-5 px-0">
+
+                                    <ul class="l-top__social-media d-flex justify-content-center mb-0 pl-0">
+
+                                        <?php if(get_field( 'instagram', 'option' )) : ?>
+                                            <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
+                                                <a
+                                                class="u-icon__brands u-icon__instagram u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
+                                                href="<?php echo get_field( 'instagram', 'option' ); ?>"
+                                                target="_blank"
+                                                rel="noreferrer noopener">
+                                                    Link do Instagram
+                                                </a>
+                                            </li>
+                                        <?php endif; ?>
+
+                                        <?php if(get_field( 'facebook', 'option' )) : ?>
+                                            <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
+                                                <a
+                                                class="u-icon__brands u-icon__facebook u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
+                                                href="<?php echo get_field( 'facebook', 'option' ) ?>"
+                                                target="_blank"
+                                                rel="noreferrer noopener">
+                                                    Link do Facebook
+                                                </a>
+                                            </li>
+                                        <?php endif; ?>
+
+                                        <?php if(get_field( 'youtube', 'option' )) : ?>
+                                            <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
+                                                <a
+                                                class="u-icon__brands u-icon__youtube u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
+                                                href="<?php echo get_field( 'youtube', 'option' ) ?>"
+                                                target="_blank"
+                                                rel="noreferrer noopener">
+                                                    Link do Youtube
+                                                </a>
+                                            </li>
+                                        <?php endif; ?>
+
+                                        <?php if(get_field( 'whatsapp', 'option' )) : ?>
+                                            <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
+                                                <a
+                                                class="u-icon__brands u-icon__whatsapp u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
+                                                href="<?php echo get_field( 'whatsapp', 'option' ) ?>"
+                                                target="_blank"
+                                                rel="noreferrer noopener">
+                                                    Link do Whatsapp
+                                                </a>
+                                            </li>
+                                        <?php endif; ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 d-lg-none">
 
                             <div class="row">
 
@@ -204,7 +297,7 @@
                                         <?php if(get_field( 'instagram', 'option' )) : ?>
                                             <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
                                                 <a
-                                                class="u-icon__brands u-icon__instagram u-font-size-0 before::u-font-size-20 text-decoration-none u-color-folk-white"
+                                                class="u-icon__brands u-icon__instagram u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
                                                 href="<?php echo get_field( 'instagram', 'option' ); ?>"
                                                 target="_blank"
                                                 rel="noreferrer noopener">
@@ -216,7 +309,7 @@
                                         <?php if(get_field( 'facebook', 'option' )) : ?>
                                             <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
                                                 <a
-                                                class="u-icon__brands u-icon__facebook u-font-size-0 before::u-font-size-20 text-decoration-none u-color-folk-white"
+                                                class="u-icon__brands u-icon__facebook u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
                                                 href="<?php echo get_field( 'facebook', 'option' ) ?>"
                                                 target="_blank"
                                                 rel="noreferrer noopener">
@@ -228,7 +321,7 @@
                                         <?php if(get_field( 'youtube', 'option' )) : ?>
                                             <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
                                                 <a
-                                                class="u-icon__brands u-icon__youtube u-font-size-0 before::u-font-size-20 text-decoration-none u-color-folk-white"
+                                                class="u-icon__brands u-icon__youtube u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
                                                 href="<?php echo get_field( 'youtube', 'option' ) ?>"
                                                 target="_blank"
                                                 rel="noreferrer noopener">
@@ -240,7 +333,7 @@
                                         <?php if(get_field( 'whatsapp', 'option' )) : ?>
                                             <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
                                                 <a
-                                                class="u-icon__brands u-icon__whatsapp u-font-size-0 before::u-font-size-20 text-decoration-none u-color-folk-white"
+                                                class="u-icon__brands u-icon__whatsapp u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
                                                 href="<?php echo get_field( 'whatsapp', 'option' ) ?>"
                                                 target="_blank"
                                                 rel="noreferrer noopener">
@@ -254,7 +347,7 @@
                             
                         </div>
 
-                        <div class="col-lg-2 d-flex d-lg-block justify-content-center align-items-center mt-3 mt-lg-0 px-lg-0">      
+                        <div class="col-lg-2 d-flex d-lg-none justify-content-center align-items-center mt-3 mt-lg-0 px-lg-0">      
                             <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
                                 <a href="<?php echo esc_url( home_url( '/' )); ?>">
                                     <img
@@ -279,7 +372,7 @@
 
             <div class="row">
                 
-                <div class="col-9 d-none d-lg-block">
+                <div class="col-9 d-none">
 
                     <div class="row justify-content-center">
 
@@ -294,7 +387,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-2">
+                <div class="col-lg-2 d-lg-none">
 
                     <div class="row">
 
@@ -327,7 +420,7 @@
     </section>
     <!-- end top -->
 
-    <header id="masthead" class="l-header header site-header navbar-static-top u-bg-folk-primary mt-4 py-4 py-lg-0 <?php echo wp_bootstrap_starter_bg_class(); ?>" role="banner">
+    <header id="masthead" class="l-header header site-header navbar-static-top u-bg-folk-primary mt-4 mt-lg-0 py-4 py-lg-0 <?php echo wp_bootstrap_starter_bg_class(); ?>" role="banner">
 
         <div class="container">
 
@@ -347,6 +440,17 @@
                 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="l-navbar__hamburger"></span>
                 </button>
+
+                <div class="l-navbar__brand-box position-relative d-none d-lg-block p-2">
+                    <a 
+                    class="position-relative d-block"
+                    href="<?php echo get_home_url( null, '/' ) ?>">
+                        <img
+                        class="img-fluid"
+                        src="<?php echo get_field( 'logo_no_topo', 'option') ?>"
+                        alt="<?php echo get_bloginfo( 'name' ) ?>">
+                    </a>
+                </div>
 
                 <?php
                 wp_nav_menu(array(

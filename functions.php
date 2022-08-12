@@ -220,6 +220,7 @@ function single_temas_scripts()
     wp_enqueue_script('single-temas-select-change-month', get_template_directory_uri() . '/../wp-bootstrap-starter-child/assets/js/select-change-month.js', array(), '1.0.2', true);
     wp_enqueue_script('single-temas-loader', get_template_directory_uri() . '/../wp-bootstrap-starter-child/assets/js/loader.js', array(), '1.0.2', true);
     wp_enqueue_script('single-temas-modes-teaching', get_template_directory_uri() . '/../wp-bootstrap-starter-child/assets/js/modes-teaching.js', array(), '1.0.2', true);
+    wp_enqueue_script('single-temas-modal-photos', get_template_directory_uri() . '/../wp-bootstrap-starter-child/assets/js/modal-photos.js', array(), '1.0.3', true);
 }
 add_action('wp_enqueue_scripts', 'single_temas_scripts');
 // Ocultar campos menu

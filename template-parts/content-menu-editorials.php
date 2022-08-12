@@ -1,4 +1,4 @@
-<ul class="list-unstyled d-flex mb-0">
+<ul class="list-unstyled h-100 d-flex mb-0">
 
     <?php
         $link_pattern = get_field( 'link_padrao_portal', 'option' );
