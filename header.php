@@ -210,78 +210,108 @@
 
                                 <div class="col-4 px-0">
                                     <?php
-                                        if( have_rows( 'botoes_de_acesso', 'option' ) ) :
-                                            while( have_rows( 'botoes_de_acesso', 'option' ) ) : the_row();
-                                                if( get_sub_field( 'visivel' ) == 'Sim' ) :
+                                        $buttons = get_field( 'botoes_de_acesso', 'option');
+
+                                        $buttons[0];
+
+                                        if( $buttons[0][ 'visivel' ] == 'Sim' ) : 
                                     ?>
-                                                    <a
-                                                    class="d-block hover:u-opacity-8 u-font-size-10 u-font-weight-bold text-center text-decoration-none my-1 py-2 px-4"
-                                                    style="color:<?php echo get_sub_field( 'cor' ) ?>;background-color:<?php echo get_sub_field( 'cor_de_fundo' ) ?>"
-                                                    href="#"
-                                                    <?php if( get_sub_field( 'abrir_em_uma_nova_aba' ) == 'Sim' ) : ?>
-                                                        target="_blank"
-                                                    <?php endif; ?>>
-                                                        <?php echo get_sub_field( 'texto' ) ?>
-                                                    </a>
-                                    <?php
-                                                endif;
-                                            endwhile;
-                                        endif;
-                                    ?>
+                                            <a
+                                            class="d-block hover:u-opacity-8 u-font-size-10 u-font-weight-bold text-center text-decoration-none my-1 py-2 px-4"
+                                            style="color:<?php echo $buttons[0][ 'cor' ]; ?>;background-color:<?php echo $buttons[0][ 'cor_de_fundo' ]; ?>"
+                                            href="<?php echo $buttons[0]['link_do_botao']; ?>"
+                                            <?php if( $buttons[0][ 'abrir_em_uma_nova_aba' ] == 'Sim' ) : ?>
+                                                target="_blank"
+                                            <?php endif; ?>>
+                                                <?php echo $buttons[0][ 'texto' ]; ?>
+                                            </a>
+                                    <?php endif; ?>
+
+                                    <?php if( $buttons[1][ 'visivel' ] == 'Sim' ) : ?>
+                                            <a
+                                            class="d-block hover:u-opacity-8 u-font-size-10 u-font-weight-bold text-center text-decoration-none my-1 py-2 px-4"
+                                            style="color:<?php echo $buttons[1][ 'cor' ]; ?>;background-color:<?php echo $buttons[1][ 'cor_de_fundo' ]; ?>"
+                                            href="<?php echo $buttons[1]['link_do_botao']; ?>"
+                                            <?php if( $buttons[1][ 'abrir_em_uma_nova_aba' ] == 'Sim' ) : ?>
+                                                target="_blank"
+                                            <?php endif; ?>>
+                                                <?php echo $buttons[1][ 'texto' ]; ?>
+                                            </a>
+                                    <?php endif; ?>
                                 </div>
 
-                                <div class="col-5 px-0">
+                                <div class="col-5 px-1">
+                                    
+                                    <div class="row">
 
-                                    <ul class="l-top__social-media d-flex justify-content-center mb-0 pl-0">
+                                        <div class="col-12">
+                                            <?php if( $buttons[2][ 'visivel' ] == 'Sim' ) : ?>
+                                                    <a
+                                                    class="d-block hover:u-opacity-8 u-font-size-10 u-font-weight-bold text-center text-decoration-none my-1 py-2 px-4"
+                                                    style="color:<?php echo $buttons[2][ 'cor' ]; ?>;background-color:<?php echo $buttons[2][ 'cor_de_fundo' ]; ?>"
+                                                    href="<?php echo $buttons[2]['link_do_botao']; ?>"
+                                                    <?php if( $buttons[2][ 'abrir_em_uma_nova_aba' ] == 'Sim' ) : ?>
+                                                        target="_blank"
+                                                    <?php endif; ?>>
+                                                        <?php echo $buttons[2][ 'texto' ]; ?>
+                                                    </a>
+                                            <?php endif; ?>
+                                        </div>
 
-                                        <?php if(get_field( 'instagram', 'option' )) : ?>
-                                            <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
-                                                <a
-                                                class="u-icon__brands u-icon__instagram u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
-                                                href="<?php echo get_field( 'instagram', 'option' ); ?>"
-                                                target="_blank"
-                                                rel="noreferrer noopener">
-                                                    Link do Instagram
-                                                </a>
-                                            </li>
-                                        <?php endif; ?>
+                                        <div class="col-12">
 
-                                        <?php if(get_field( 'facebook', 'option' )) : ?>
-                                            <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
-                                                <a
-                                                class="u-icon__brands u-icon__facebook u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
-                                                href="<?php echo get_field( 'facebook', 'option' ) ?>"
-                                                target="_blank"
-                                                rel="noreferrer noopener">
-                                                    Link do Facebook
-                                                </a>
-                                            </li>
-                                        <?php endif; ?>
+                                            <ul class="l-top__social-media d-flex justify-content-center mb-0 pl-0">
 
-                                        <?php if(get_field( 'youtube', 'option' )) : ?>
-                                            <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
-                                                <a
-                                                class="u-icon__brands u-icon__youtube u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
-                                                href="<?php echo get_field( 'youtube', 'option' ) ?>"
-                                                target="_blank"
-                                                rel="noreferrer noopener">
-                                                    Link do Youtube
-                                                </a>
-                                            </li>
-                                        <?php endif; ?>
+                                                <?php if(get_field( 'instagram', 'option' )) : ?>
+                                                    <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
+                                                        <a
+                                                        class="u-icon__brands u-icon__instagram u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
+                                                        href="<?php echo get_field( 'instagram', 'option' ); ?>"
+                                                        target="_blank"
+                                                        rel="noreferrer noopener">
+                                                            Link do Instagram
+                                                        </a>
+                                                    </li>
+                                                <?php endif; ?>
 
-                                        <?php if(get_field( 'whatsapp', 'option' )) : ?>
-                                            <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
-                                                <a
-                                                class="u-icon__brands u-icon__whatsapp u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
-                                                href="<?php echo get_field( 'whatsapp', 'option' ) ?>"
-                                                target="_blank"
-                                                rel="noreferrer noopener">
-                                                    Link do Whatsapp
-                                                </a>
-                                            </li>
-                                        <?php endif; ?>
-                                    </ul>
+                                                <?php if(get_field( 'facebook', 'option' )) : ?>
+                                                    <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
+                                                        <a
+                                                        class="u-icon__brands u-icon__facebook u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
+                                                        href="<?php echo get_field( 'facebook', 'option' ) ?>"
+                                                        target="_blank"
+                                                        rel="noreferrer noopener">
+                                                            Link do Facebook
+                                                        </a>
+                                                    </li>
+                                                <?php endif; ?>
+
+                                                <?php if(get_field( 'youtube', 'option' )) : ?>
+                                                    <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
+                                                        <a
+                                                        class="u-icon__brands u-icon__youtube u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
+                                                        href="<?php echo get_field( 'youtube', 'option' ) ?>"
+                                                        target="_blank"
+                                                        rel="noreferrer noopener">
+                                                            Link do Youtube
+                                                        </a>
+                                                    </li>
+                                                <?php endif; ?>
+
+                                                <?php if(get_field( 'whatsapp', 'option' )) : ?>
+                                                    <li class="l-top__social-media__item d-flex justify-content-center align-items-center u-bg-folk-primary mx-1">
+                                                        <a
+                                                        class="u-icon__brands u-icon__whatsapp u-font-size-0 before::u-font-size-16 text-decoration-none u-color-folk-white"
+                                                        href="<?php echo get_field( 'whatsapp', 'option' ) ?>"
+                                                        target="_blank"
+                                                        rel="noreferrer noopener">
+                                                            Link do Whatsapp
+                                                        </a>
+                                                    </li>
+                                                <?php endif; ?>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
