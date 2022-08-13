@@ -19,7 +19,7 @@
                             <!-- loop -->
                             <?php
                                 $args = array(
-                                    'posts_per_page' => 8,
+                                    'posts_per_page' => 3,
                                     'post_type'      => 'galeria',
                                     'order'          => 'DESC'
                                 );
@@ -35,6 +35,7 @@
                                     href="<?php the_permalink() ?>">
                                         <img
                                         class="img-fluid w-100"
+                                        style="height:225px;object-fit:cover"
                                         src="<?php echo get_field( 'capa_do_album' ) ?>"
                                         alt="<?php the_title() ?>">
                                     </a>

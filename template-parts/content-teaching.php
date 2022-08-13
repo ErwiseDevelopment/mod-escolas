@@ -122,7 +122,7 @@
 
                                         <div class="row">
 
-                                            <div class="col-6">
+                                            <div class="col-lg-6">
                                                 <!-- <img
                                                 class="img-fluid"
                                                 src="<php echo get_template_directory_uri()>/../wp-bootstrap-starter-child/assets/images/ensino-image-1.png"
@@ -140,7 +140,7 @@
                                                 ?>
                                             </div>
 
-                                            <div class="col-6">
+                                            <div class="col-lg-6 mt-3 mt-lg-0">
 
                                                 <!-- <h4 class="l-teaching__title u-font-weight-semibold text-uppercase all:u-color-folk-cyan">
                                                     educação <span class="u-font-weight-black">infantil</span>

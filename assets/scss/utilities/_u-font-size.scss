@@ -61,3 +61,13 @@ $utility-name: 'u-font-size';
         }
     }
 }
+
+.xxl\: {
+    &#{$utility-name} {
+        &-14 {
+            @media screen and (min-width: 1600px) {
+                font-size: .875rem !important;
+            }
+        }
+    }
+}

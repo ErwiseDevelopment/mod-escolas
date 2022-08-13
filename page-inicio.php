@@ -44,7 +44,7 @@ get_header(); ?>
                         alt="Inovação, evolutação e realização">
                     </div>
 
-                    <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="col-lg-6 d-none d-lg-block mt-4 mt-lg-0">
                     
                         <?php
                             $count = count( get_field( 'icones_inovacao_evolucao' ) );
@@ -73,7 +73,7 @@ get_header(); ?>
                                                 <span class="u-font-weight-black">Imaginação</span>
                                             </h3> -->
 
-                                            <h3 class="u-font-size-14 u-font-weight-semibold text-center all:u-color-folk-white mb-0">
+                                            <h3 class="u-font-size-12 xxl:u-font-size-14 u-font-weight-semibold text-center all:u-color-folk-white mb-0">
                                                 <?php echo $item[ 'titulo' ]; ?> <br>
                                                 <span class="u-font-weight-black text-uppercase"><?php echo $item[ 'titulo_com_negrito' ]; ?></span>
                                             </h3>
@@ -101,7 +101,7 @@ get_header(); ?>
 
                                         <div class="card-body pt-2">
 
-                                            <h3 class="u-font-size-14 u-font-weight-semibold text-center all:u-color-folk-white mb-0">
+                                            <h3 class="u-font-size-12 xxl:u-font-size-14 u-font-weight-semibold text-center all:u-color-folk-white mb-0">
                                                 <?php echo $item[ 'titulo' ]; ?> <br>
                                                 <span class="u-font-weight-black text-uppercase"><?php echo $item[ 'titulo_com_negrito' ]; ?></span>
                                             </h3>
@@ -129,7 +129,7 @@ get_header(); ?>
 
                                         <div class="card-body pt-2">
 
-                                            <h3 class="u-font-size-14 u-font-weight-semibold text-center all:u-color-folk-white mb-0">
+                                            <h3 class="u-font-size-12 xxl:u-font-size-14 u-font-weight-semibold text-center all:u-color-folk-white mb-0">
                                                 <?php echo $item[ 'titulo' ]; ?> <br>
                                                 <span class="u-font-weight-black text-uppercase"><?php echo $item[ 'titulo_com_negrito' ]; ?></span>
                                             </h3>
@@ -154,7 +154,7 @@ get_header(); ?>
 
                                     <div class="card-body pt-2">
 
-                                        <h3 class="u-font-size-14 u-font-weight-semibold text-center all:u-color-folk-white mb-0">
+                                        <h3 class="u-font-size-12 xxl:u-font-size-14 u-font-weight-semibold text-center all:u-color-folk-white mb-0">
                                             e muito <br>
                                             <span class="u-font-weight-black text-uppercase">mais!</span>
                                         </h3>

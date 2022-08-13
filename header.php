@@ -240,7 +240,7 @@
                                     <?php endif; ?>
                                 </div>
 
-                                <div class="col-5 px-1">
+                                <div class="col-5 pt-1 px-1">
                                     
                                     <div class="row">
 
