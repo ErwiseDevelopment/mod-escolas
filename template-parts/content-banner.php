@@ -13,15 +13,18 @@
 
                         <!-- slide -->
                         <?php if(have_rows( 'banner' )) :
-                            while(have_rows( 'banner' ) ) : the_row();
+                                while(have_rows( 'banner' ) ) : the_row();
+                                    if( get_sub_field( 'imagem' ) ) :
                         ?>
-                                <div class="swiper-slide">
-                                    <img
-                                    class="img-fluid"
-                                    src="<?php echo get_sub_field( 'imagem' ) ?>"
-                                    alt="">
-                                </div>
-                        <?php endwhile;
+                                        <div class="swiper-slide">
+                                            <img
+                                            class="img-fluid"
+                                            src="<?php echo get_sub_field( 'imagem' ) ?>"
+                                            alt="<?php the_title() ?>">
+                                        </div>
+                        <?php 
+                                    endif;
+                                endwhile;
                             endif;
                         ?>
                         <!-- end slide -->
