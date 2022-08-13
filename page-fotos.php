@@ -52,7 +52,8 @@ get_header(); ?>
                                         <div class="l-page-photos__card-img card-img">
 
                                             <img
-                                            class="img-fluid"
+                                            class="img-fluid w-100"
+                                            style="height:250px;object-fit:cover"
                                             src="<?php echo get_field( 'capa_do_album' ) ?>"
                                             alt="<?php the_title() ?> ">
                                         </div>

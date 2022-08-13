@@ -14,7 +14,7 @@ get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-<section>
+<section class="mb-5">
 
     <div class="container-fluid">
 
@@ -22,10 +22,15 @@ get_header(); ?>
 
             <div class="col-12 px-0">
 
-                <img
+                <!-- <img
                 class="img-fluid"
-                src="<?php echo get_home_url( null, 'wp-content/uploads/2022/02/banner-osj.png') ?>"
-                alt="<?php the_title() ?>">
+                src=""
+                alt="<php the_title() ?>"> -->
+
+                <?php
+                    $alt_title = get_the_title();
+
+                    echo get_the_post_thumbnail( 303, 'post-thumbnail', array( 'class' => 'img-fluiw w-100', 'style' => 'object-fit:cover', 'alt' => $alt_title) ); ?>
             </div>
         </div>
     </div>
@@ -56,6 +61,17 @@ get_header(); ?>
                         endif;
                     ?>
                 </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-5 mt-3">
+                <a 
+                class="l-news__small__card-read-more u-line-height-100 hover:u-opacity-8 d-block u-font-weight-bold text-center text-decoration-none u-color-folk-white u-bg-folk-secondary py-3 px-5" 
+                href="<?php echo get_home_url( null, 'fotos' ) ?>">
+                    Voltar para a página de galeria
+                </a>
             </div>
         </div>
     </div>
