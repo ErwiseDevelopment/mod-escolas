@@ -148,7 +148,7 @@
 
                         <a 
                         class="l-blogs__btn-more-content w-100 u-line-height-100 u-border-2 u-border-color-secondary d-block u-font-weight-bold text-center text-uppercase text-decoration-none u-color-folk-secondary hover:u-color-folk-white u-bg-folk-none hover:u-bg-folk-secondary p-3" 
-                        href="http://portalerwise.test/blogs?cat=39"
+                        href="<?php echo $link_pattern . get_field ('+_conteudos_btn','option')?>" target = "_blank"
                         data-aos="zoom-in">
                             + Conteúdos
                         </a>

@@ -18,11 +18,11 @@ get_header(); ?>
 
     <div class="container">
 
-        <div class="row">
+        <div class="row ">
 
             <div class="col-12 mb-5 pb-5">
                 
-                <div class="row">
+                <div class="row justify-content-center">
 
                     <div class="col-lg-8">
                         
@@ -46,34 +46,6 @@ get_header(); ?>
                             <?php the_title() ?>
                         </h1>
 
-                        <div class="d-flex justify-content-between pr-4">
-                            <p class="u-font-size-14 u-font-weight-medium">
-                                <strong>Em: </strong> <?php echo get_the_date( 'd/m/Y', $post->ID ); ?>
-                            </p>
-
-                            <p class="u-font-size-14 u-font-weight-medium">
-                                <!-- <strong>Por: </strong>Inspetoria São Pio X -->
-                                <strong>Por: </strong><?php echo get_the_author_meta('user_firstname', $author_id) . ' ' . get_the_author_meta( 'user_lastname', $author_id); ?>
-                            </p>
-                            
-                            <?php
-                                $cats = array();
-                                
-                                foreach (get_the_category($post_id) as $c) {
-                                    $cat = get_category($c);
-                                    array_push($cats, $cat->name);
-                                }
-
-                                if (sizeOf($cats) > 0) {
-                                    $post_categories = implode(', ', $cats);
-                                } 
-                            ?>
-
-                            <p class="u-font-size-14 u-font-weight-medium">
-                                <strong>Categorias: </strong><?php echo $post_categories; ?>
-                            </p>
-                        </div>
-
                         <hr>
 
                         <span class="d-block">
@@ -87,156 +59,18 @@ get_header(); ?>
                         </span>
                     </div>
 
-                    <div class="col-lg-4 pt-3">
-                        
-                        <div class="row">
-
-                            <div class="col-12">
-                                <p class="l-single-post__subtitle u-font-weight-bold">
-                                    Buscar
-                                </p>
-
-                                <form 
-                                role="search" 
-                                method="get" 
-                                action="<?php echo get_home_url( null, '/' ) ?>">
-
-                                    <div class="row">
-
-                                        <div class="col-10">
-
-                                            <input
-                                            class="c-input__search w-100 u-font-size u-font-weight-medium py-1 px-2"
-                                            type="search"
-                                            name="s"
-                                            value=""
-                                            placeholder="Pesquisar ...">
-                                        </div>
-
-                                        <div class="col-2 d-flex align-items-center px-0">
-
-                                            <span class="u-icon u-icon__free u-icon__search u-font-size-0 before::u-font-size-20 u-font-weight-semibold u-cursor-pointer js-icon-search">
-                                                Pesquisar
-                                            </span>
-
-                                            <input 
-                                            class="d-none js-input-search"
-                                            type="submit"
-                                            value="Pesquisar">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div class="col-12 mt-4">
-
-                                <p class="l-single-post__subtitle u-font-weight-bold">
-                                    Posts Recentes
-                                </p>
-
-                                <div class="row">
-
-                                    <!-- loop -->
-                                    <?php
-                                        $postCurrentID = $post->ID;
-
-                                        $args = array(
-                                            'posts_per_page' => 5,
-                                            'post_type'      => 'post',
-                                        );
-
-                                        $posts_recent = new WP_Query( $args );
-                                        
-                                        if( $posts_recent->have_posts() ) : 
-                                            while( $posts_recent->have_posts() ): $posts_recent->the_post();
-                                                if($postCurrentID != get_the_id()) : 
-                                    ?>
-
-                                                    <div class="col-12 u-border-bottom-1 last-child:u-border-none u-border-color-light-gray mb-3 pb-3">
-
-                                                        <div class="row">
-
-                                                            <div class="col-4">
-                                                                <!-- <img
-                                                                class="img-fluid"
-                                                                src="http://www.dombosco.net/wp-content/uploads/2021/12/IMG_2236-150x150.jpg"
-                                                                alt="Nome do post">  -->
-                                                                
-                                                                <?php
-                                                                    $altTitle = get_the_title();
-                                                                    
-                                                                    the_post_thumbnail('post-thumbnail', 
-                                                                        array(
-                                                                            'class' => 'img-fluid',
-                                                                            'alt'   => $altTitle,
-                                                                    ));
-                                                                ?>
-                                                            </div>
-
-                                                            <div class="col-8">
-                                                                <a
-                                                                class="u-font-size-14 u-font-weight-bold text-uppercase u-color-folk-black"
-                                                                href="#">
-                                                                    <!-- 5 curiosidades sobre a vida de Dom Bosco -->
-                                                                    <?php the_title() ?>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                    <?php       endif;
-                                            endwhile; 
-                                        endif;
-
-                                        wp_reset_query();
-                                    ?>
-
-                                    <!-- <div class="col-12 my-3">
-
-                                        <div class="row">
-
-                                            <div class="col-4">
-                                                <img
-                                                class="img-fluid"
-                                                src="http://www.dombosco.net/wp-content/uploads/2021/12/IMG_2236-150x150.jpg"
-                                                alt="Nome do post">                                            
-                                            </div>
-
-                                            <div class="col-8">
-                                                <a
-                                                class="u-font-size u-font-weight-bold text-uppercase u-color-folk-black"
-                                                href="#">
-                                                    5 curiosidades sobre a vida de Dom Bosco
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 my-3">
-
-                                        <div class="row">
-
-                                            <div class="col-4">
-                                                <img
-                                                class="img-fluid"
-                                                src="http://www.dombosco.net/wp-content/uploads/2021/12/IMG_2236-150x150.jpg"
-                                                alt="Nome do post">                                            
-                                            </div>
-
-                                            <div class="col-8">
-                                                <a
-                                                class="u-font-size u-font-weight-bold text-uppercase u-color-folk-black"
-                                                href="#">
-                                                    5 curiosidades sobre a vida de Dom Bosco
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                    <!-- loop -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
+                <div class="row justify-content-center">
+
+<div class="col-md-5 mt-3">
+    <a 
+    class="l-news__small__card-read-more u-line-height-100 hover:u-opacity-8 d-block u-font-weight-bold text-center text-decoration-none u-color-folk-white u-bg-folk-secondary py-3 px-5" 
+    href="<?php echo get_home_url( null, 'inicio' ) ?>">
+        Voltar para a página inicial
+    </a>
+</div>
+</div>
             </div>
         </div>
     </div>

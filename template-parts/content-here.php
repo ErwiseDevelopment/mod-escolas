@@ -23,7 +23,7 @@
 
                                 <a 
                                 class="l-news__small__card-read-more u-line-height-100 hover:u-opacity-8 d-block u-font-weight-bold text-center text-decoration-none u-color-folk-white u-bg-folk-secondary py-2 px-5" 
-                                href="#">
+                                href="<?php echo $link_pattern . get_field('ver_todas_noticias','option');?>">
                                     Ver todas as notícias
                                 </a>
                             </div>
@@ -107,7 +107,7 @@
 
                                                             <a 
                                                             class="l-news__small__card-read-more u-line-height-100 hover:u-opacity-8 d-block u-font-weight-bold text-center text-decoration-none u-color-folk-white u-bg-folk-secondary py-2 px-5" 
-                                                            href="<?php echo esc_url( $rest_post->link ); ?>">
+                                                            href="<?php echo esc_url( $rest_post->link ); ?>" target="_blank">
                                                                 Ler mais
                                                             </a>
                                                         </div>
