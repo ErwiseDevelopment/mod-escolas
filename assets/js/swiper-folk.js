@@ -149,3 +149,19 @@ const swiperPartners = new Swiper( '.js-swiper-partners', {
         nextEl: '.js-swiper-button-next-partners'
     }
 })
+
+if(document.querySelector( '.js-swipers' ) ) {
+    const swipersStructures = document.getElementsByClassName( 'js-swipers' ) 
+    let count = 0;
+
+    for( const i of swipersStructures ) {
+        count++
+
+        let swiper = new Swiper( `.js-swiper-structures-${count}`, {
+            navigation: {
+                prevEl: `.js-swiper-button-prev-structures-${count}`,
+                nextEl: `.js-swiper-button-next-structures-${count}`
+            }
+        })
+    }
+}

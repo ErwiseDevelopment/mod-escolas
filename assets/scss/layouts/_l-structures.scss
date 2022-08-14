@@ -1,0 +1,35 @@
+$layout-name: 'l-structures';
+
+.#{$layout-name} {
+    &__col-child {
+        &:nth-of-type(even) {
+            .#{$layout-name} {
+                &__item-child {
+                    &:nth-of-type(odd) {
+                        order: 2;
+
+                        @media screen and (max-width: 991px) {
+                            order: 1;
+                        }
+                    }
+
+                    &:nth-of-type(even) {
+                        order: 1;
+
+                        @media screen and (max-width: 991px) {
+                            order: 2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .swiper-slide {
+        img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+        }
+    }
+}
