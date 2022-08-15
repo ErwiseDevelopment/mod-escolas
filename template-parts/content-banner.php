@@ -15,10 +15,11 @@
                          <?php if(have_rows( 'banner' )) :
                                 while(have_rows( 'banner' ) ) : the_row();
                                     if( get_sub_field( 'imagem' ) ) :
-                                        if( get_sub_field('link')):
+                                        //if ( get_sub_field('link')):
+                                            
                         ?>
                                         <div class="swiper-slide">
-                                           <a href="<?php echo get_sub_field('link') ?>" target="_blank"> 
+                                           <a href="<?php echo get_sub_field('link') ?>"> 
                                                 <img
                                                 class="img-fluid"
                                                 src="<?php echo get_sub_field( 'imagem' ) ?>"
@@ -27,7 +28,7 @@
                                         </div>
                         <?php 
                                     endif;
-                                endif;
+                                //endif;
                                 endwhile;
                             endif;
                         ?>
