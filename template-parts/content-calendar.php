@@ -53,7 +53,7 @@
                             <div class="col-md-8">
                                 <a 
                                 class="l-news__small__card-read-more u-line-height-100 hover:u-opacity-8 d-block u-font-weight-bold text-center text-decoration-none u-color-folk-white u-bg-folk-secondary py-2 px-5" 
-                                href="https://portal.erwise.com.br/encontro-preludio-reune-liderancas-juvenis-da-paroquia-santo-antonio/">
+                                href="<?php ?>">
                                     Veja mais
                                 </a>
                             </div>

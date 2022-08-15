@@ -81,16 +81,16 @@ get_header(); ?>
                                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta laudantium explicabo fugiat expedita aperiam, aliquid quod facilis. Consequatur sunt laborum, eveniet ea molestiae similique veniam aperiam modi ut. Perspiciatis, iste. <br>
                                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta laudantium explicabo fugiat expedita aperiam, aliquid quod facilis. Consequatur sunt laborum, eveniet ea molestiae similique veniam aperiam modi ut. Perspiciatis, iste. -->
                                             <?php 
-                                                echo (limit_words( get_the_content(), 80));
+                                                echo (limit_words( get_the_content(), 100));
                                             ?>
 
-                                            <?php if( get_field( 'conheca_nossa_estrutura_nossa_escola' ) ) : ?>
+                                            <!-- <php if( get_field( 'conheca_nossa_estrutura_nossa_escola' ) ) : ?>
                                                 <a 
                                                 class="d-block u-font-weight-semibold u-color-folk-secondary mt-4"
-                                                href="<?php echo get_field( 'conheca_nossa_estrutura_nossa_escola' ) ?>">
+                                                href="<php echo get_field( 'conheca_nossa_estrutura_nossa_escola' ) ?>">
                                                     Conheça nossa estrutura
                                                 </a>
-                                            <?php endif; ?>
+                                            <php endif; ?> -->
                                         </span>
                                     </div>
                                 </div>
