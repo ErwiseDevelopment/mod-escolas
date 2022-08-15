@@ -17,6 +17,28 @@ get_header(); ?>
 <section id="primary" class="content-area">
 <div id="main" class="site-main" role="main">
 
+<section class="mb-5">
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-12 px-0">
+
+                <!-- <img
+                class="img-fluid"
+                src=""
+                alt="<php the_title() ?>"> -->
+
+                <?php
+                    $alt_title = get_the_title();
+
+                    echo get_the_post_thumbnail( 303, 'post-thumbnail', array( 'class' => 'img-fluiw w-100', 'style' => 'object-fit:cover', 'alt' => $alt_title) ); ?>
+            </div>
+        </div>
+    </div>
+</section>
+
 <?php while ( have_posts() ) : the_post(); ?>
 
 <!-- gallery -->
