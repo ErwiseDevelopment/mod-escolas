@@ -28,7 +28,7 @@
 
                                 <a 
                                 class="l-news__small__card-read-more u-line-height-100 hover:u-opacity-8 d-block u-font-weight-bold text-center text-decoration-none u-color-folk-white u-bg-folk-secondary py-2 px-5" 
-                                href="<?php echo $link_pattern . get_field ('+_conteudos_btn','option')?>" target = "_blank">
+                                href="<?php echo $link_pattern . get_field ('','option')?>" target = "_blank">
                                     Ver todas as notícias
                                 </a>
                             </div>
