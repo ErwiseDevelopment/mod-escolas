@@ -170,7 +170,7 @@ get_header(); ?>
 </section>
 
 <!-- here -->
-<?php echo get_template_part( 'template-parts/content', 'here' ) ?>
+<?php echo get_template_part( 'template-parts/content', 'news' ) ?>
 <!-- end here -->
 
 <!-- calendar -->
