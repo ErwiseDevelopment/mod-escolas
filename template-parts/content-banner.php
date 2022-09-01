@@ -11,7 +11,7 @@
 
                     <div class="swiper-wrapper">
 
-                         <!-- slide a-->
+                         <!-- slide 12312312312313a-->
                   <?php if(have_rows( 'banner' )) :
                                 while(have_rows( 'banner' ) ) : the_row();
                                     if( get_sub_field( 'imagem' ) ) :
